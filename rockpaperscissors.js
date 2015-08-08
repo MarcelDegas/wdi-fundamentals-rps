@@ -71,11 +71,20 @@ function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
+    var result;
     while ((playerWins < 5) && (computerWins < 5)) {
-        if (getWinner(getPlayerMove(), getComputerMove()) === 'player') {
+        
+        result = getWinner(getPlayerMove(), getComputerMove());
+        if (result === 'tie') {
+            console.log("Its a tie!");
+        }
+
+        else if (result === 'player') {
+            console.log("You win, dawg!");
             playerWins ++;
         }
-        else if (getWinner(getPlayerMove(), getComputerMove()) === 'computer') {
+        else if (result === 'computer') {
+            console.log("You lose, sucker!");
             computerWins ++;
         }
 
